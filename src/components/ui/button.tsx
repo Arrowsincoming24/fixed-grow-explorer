@@ -5,19 +5,20 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow-soft",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "gradient-primary text-white hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+        default: "gradient-primary text-white shadow-button hover:shadow-hero hover:scale-[1.05] active:scale-[0.98] hover:-translate-y-1",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-soft hover:shadow-lg",
         outline:
-          "border border-border bg-card text-card-foreground hover:bg-muted/20 hover:border-primary/30",
+          "border-2 border-border bg-card text-card-foreground hover:bg-card-secondary hover:border-primary/40 shadow-soft hover:shadow-card",
         secondary:
-          "gradient-secondary text-white hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
-        ghost: "hover:bg-card hover:text-card-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "gradient-secondary text-white shadow-button hover:shadow-hero hover:scale-[1.05] active:scale-[0.98] hover:-translate-y-1",
+        ghost: "hover:bg-card-secondary hover:text-card-foreground rounded-lg",
+        link: "text-primary underline-offset-4 hover:underline font-medium",
+        premium: "gradient-hero text-white shadow-hero hover:shadow-button hover:scale-[1.08] active:scale-[0.95] hover:-translate-y-2 animate-glow",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -8,7 +8,7 @@
 
 @layer base {
   :root {
-    /* Core brand colors */
+    /* Core brand colors - Zenith Bank palette */
     --primary: 322 100% 55%; /* #FF5BBE */
     --primary-end: 322 100% 40%; /* #FF0099 */
     --primary-foreground: 0 0% 100%;
@@ -18,26 +18,27 @@
     --secondary-aqua: 186 100% 50%; /* #00F0FF */
     --secondary-foreground: 0 0% 100%;
     
-    /* Background and surfaces */
-    --background: 240 9% 5%; /* #0D0D12 */
-    --foreground: 240 5% 96%; /* #F5F5F7 */
+    /* Light theme backgrounds */
+    --background: 240 20% 98%; /* Very light blue-gray */
+    --foreground: 240 10% 15%; /* Dark text */
     
     /* Card and surface colors */
-    --card: 240 5% 96%; /* #F5F5F7 */
-    --card-foreground: 240 9% 5%;
+    --card: 0 0% 100%; /* Pure white cards */
+    --card-foreground: 240 10% 15%;
+    --card-secondary: 240 60% 97%; /* Light blue tint */
     
     /* Muted colors */
-    --muted: 220 9% 46%; /* #6B7280 */
-    --muted-foreground: 220 9% 46%;
+    --muted: 240 5% 88%; /* Light gray */
+    --muted-foreground: 240 4% 46%;
     
     /* Interactive elements */
     --accent: 322 100% 55%;
     --accent-foreground: 0 0% 100%;
     
     /* Form elements */
-    --input: 240 5% 96%;
-    --input-foreground: 240 9% 5%;
-    --border: 220 13% 91%;
+    --input: 0 0% 100%;
+    --input-foreground: 240 10% 15%;
+    --border: 240 15% 85%;
     --ring: 322 100% 55%;
     
     /* Status colors */
@@ -45,19 +46,25 @@
     --destructive-foreground: 0 0% 100%;
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
     
-    /* Gradients */
+    /* Enhanced gradients */
     --gradient-primary: linear-gradient(135deg, hsl(322 100% 55%), hsl(322 100% 40%));
     --gradient-secondary: linear-gradient(135deg, hsl(258 90% 66%), hsl(186 100% 50%));
-    --gradient-card: linear-gradient(135deg, hsl(240 5% 98%), hsl(240 5% 96%));
+    --gradient-hero: linear-gradient(135deg, hsl(322 100% 55%) 0%, hsl(258 90% 66%) 50%, hsl(186 100% 50%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(240 60% 98%) 100%);
+    --gradient-accent: linear-gradient(45deg, hsl(322 100% 55%), hsl(322 100% 65%));
     
-    /* Shadows */
-    --shadow-soft: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    --shadow-card: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    /* Enhanced shadows */
+    --shadow-soft: 0px 4px 20px rgba(255, 91, 190, 0.15);
+    --shadow-card: 0px 8px 30px rgba(0, 0, 0, 0.08);
+    --shadow-button: 0px 6px 25px rgba(255, 91, 190, 0.25);
+    --shadow-hero: 0px 20px 60px rgba(255, 91, 190, 0.2);
     
     /* Border radius */
-    --radius: 0.5rem;
-    --radius-lg: 1rem;
+    --radius: 0.75rem;
+    --radius-lg: 1.25rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -134,12 +141,32 @@
     background: var(--gradient-secondary);
   }
   
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
   
   .shadow-card {
     box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+  
+  .shadow-hero {
+    box-shadow: var(--shadow-hero);
   }
   
   .font-inter {
@@ -149,4 +176,22 @@
   .font-mono {
     font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
   }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  from { box-shadow: var(--shadow-soft); }
+  to { box-shadow: var(--shadow-button); }
 }
