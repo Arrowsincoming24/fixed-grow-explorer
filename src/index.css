@@ -9,13 +9,13 @@
 @layer base {
   :root {
     /* Core brand colors - Zenith Bank palette */
-    --primary: 322 100% 55%; /* #FF5BBE */
-    --primary-end: 322 100% 40%; /* #FF0099 */
+    --primary: 213 77% 55%; /* Soothing blue #4A90E2 */
+    --primary-end: 213 77% 45%; /* Deeper blue #3A7BD5 */
     --primary-foreground: 0 0% 100%;
     
     /* Secondary colors */
-    --secondary-purple: 258 90% 66%; /* #7C3AED */
-    --secondary-aqua: 186 100% 50%; /* #00F0FF */
+    --secondary-green: 158 64% 52%; /* Soft green #4ECDC4 */
+    --secondary-mint: 168 68% 60%; /* Mint green #5FD3A9 */
     --secondary-foreground: 0 0% 100%;
     
     /* Light theme backgrounds */
@@ -32,14 +32,14 @@
     --muted-foreground: 240 4% 46%;
     
     /* Interactive elements */
-    --accent: 322 100% 55%;
+    --accent: 213 77% 55%;
     --accent-foreground: 0 0% 100%;
     
     /* Form elements */
     --input: 0 0% 100%;
     --input-foreground: 240 10% 15%;
-    --border: 240 15% 85%;
-    --ring: 322 100% 55%;
+    --border: 213 20% 88%;
+    --ring: 213 77% 55%;
     
     /* Status colors */
     --destructive: 0 84% 60%;
@@ -50,17 +50,17 @@
     --warning-foreground: 0 0% 100%;
     
     /* Enhanced gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(322 100% 55%), hsl(322 100% 40%));
-    --gradient-secondary: linear-gradient(135deg, hsl(258 90% 66%), hsl(186 100% 50%));
-    --gradient-hero: linear-gradient(135deg, hsl(322 100% 55%) 0%, hsl(258 90% 66%) 50%, hsl(186 100% 50%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(240 60% 98%) 100%);
-    --gradient-accent: linear-gradient(45deg, hsl(322 100% 55%), hsl(322 100% 65%));
+    --gradient-primary: linear-gradient(135deg, hsl(213 77% 55%), hsl(213 77% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(158 64% 52%), hsl(168 68% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(213 77% 55%) 0%, hsl(158 64% 52%) 50%, hsl(168 68% 60%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(213 30% 97%) 100%);
+    --gradient-accent: linear-gradient(45deg, hsl(213 77% 55%), hsl(213 77% 65%));
     
     /* Enhanced shadows */
-    --shadow-soft: 0px 4px 20px rgba(255, 91, 190, 0.15);
+    --shadow-soft: 0px 4px 20px rgba(74, 144, 226, 0.15);
     --shadow-card: 0px 8px 30px rgba(0, 0, 0, 0.08);
-    --shadow-button: 0px 6px 25px rgba(255, 91, 190, 0.25);
-    --shadow-hero: 0px 20px 60px rgba(255, 91, 190, 0.2);
+    --shadow-button: 0px 6px 25px rgba(74, 144, 226, 0.25);
+    --shadow-hero: 0px 20px 60px rgba(74, 144, 226, 0.2);
     
     /* Border radius */
     --radius: 0.75rem;
