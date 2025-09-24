@@ -127,7 +127,7 @@ const FixedDepositCalculator: React.FC = () => {
 
   const translations = {
     en: {
-      bankName: 'cachcached',
+      bankName: 'Cashcached',
       title: 'Fixed Deposit Calculator',
       subtitle: 'Maximize your savings with Zenith\'s competitive rates',
       amount: 'Deposit Amount',
