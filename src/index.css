@@ -8,32 +8,32 @@
 
 @layer base {
   :root {
-    /* Core brand colors - Zenith Bank palette */
-    --primary: 30 20% 20%; /* Rich coffee brown #382E26 */
-    --primary-end: 30 25% 15%; /* Darker coffee #2D1F18 */
+    /* Core brand colors - Cashcached purple-pink palette */
+    --primary: 258 75% 65%; /* Purple #A855F7 */
+    --primary-end: 315 85% 70%; /* Pink #F061D8 */
     --primary-foreground: 0 0% 100%;
     
     /* Secondary colors */
-    --secondary-cream: 45 40% 92%; /* Warm cream #F5F1EB */
-    --secondary-bronze: 35 35% 35%; /* Bronze accent #6B5B47 */
-    --secondary-foreground: 30 20% 20%;
+    --secondary-cream: 270 60% 95%; /* Light purple cream */
+    --secondary-bronze: 270 45% 75%; /* Medium purple */
+    --secondary-foreground: 258 70% 25%;
     
     /* Light theme backgrounds */
-    --background: 45 40% 97%; /* Warm white */
-    --foreground: 30 20% 20%; /* Coffee brown text */
+    --background: 270 30% 98%; /* Very light purple white */
+    --foreground: 258 70% 15%; /* Dark purple text */
     
     /* Card and surface colors */
-    --card: 0 0% 100%; /* Pure white cards */
-    --card-foreground: 30 20% 20%;
-    --card-secondary: 45 40% 95%; /* Light cream tint */
+    --card: 270 40% 97%; /* Subtle purple tint cards */
+    --card-foreground: 258 60% 20%;
+    --card-secondary: 270 50% 95%; /* Light purple tint */
     
     /* Muted colors */
-    --muted: 45 20% 90%; /* Light beige */
-    --muted-foreground: 30 15% 40%;
+    --muted: 270 35% 92%; /* Light purple-gray */
+    --muted-foreground: 258 40% 50%;
     
     /* Interactive elements */
-    --accent: 30 20% 20%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 285 70% 85%; /* Light purple accent */
+    --accent-foreground: 258 70% 25%;
     
     /* Form elements */
     --input: 0 0% 100%;
@@ -44,23 +44,23 @@
     /* Status colors */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --success: 142 71% 45%;
+    --success: 285 60% 55%; /* Purple-tinted success */
     --success-foreground: 0 0% 100%;
-    --warning: 38 92% 50%;
+    --warning: 315 80% 65%; /* Pink-tinted warning */
     --warning-foreground: 0 0% 100%;
     
     /* Enhanced gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(30 20% 20%), hsl(30 25% 15%));
-    --gradient-secondary: linear-gradient(135deg, hsl(35 35% 35%), hsl(45 40% 92%));
-    --gradient-hero: linear-gradient(135deg, hsl(30 20% 20%) 0%, hsl(35 35% 35%) 50%, hsl(45 40% 92%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(45 40% 97%) 100%);
-    --gradient-accent: linear-gradient(45deg, hsl(30 20% 20%), hsl(30 20% 30%));
+    --gradient-primary: linear-gradient(135deg, hsl(258 75% 65%), hsl(315 85% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(270 45% 75%), hsl(285 70% 85%));
+    --gradient-hero: linear-gradient(135deg, hsl(258 75% 65%) 0%, hsl(315 85% 70%) 50%, hsl(270 60% 80%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(270 40% 97%) 0%, hsl(270 50% 95%) 100%);
+    --gradient-accent: linear-gradient(45deg, hsl(258 75% 65%), hsl(270 70% 70%));
     
     /* Enhanced shadows */
-    --shadow-soft: 0px 4px 20px rgba(56, 46, 38, 0.15);
-    --shadow-card: 0px 8px 30px rgba(0, 0, 0, 0.08);
-    --shadow-button: 0px 6px 25px rgba(56, 46, 38, 0.25);
-    --shadow-hero: 0px 20px 60px rgba(56, 46, 38, 0.2);
+    --shadow-soft: 0px 4px 20px rgba(168, 85, 247, 0.15);
+    --shadow-card: 0px 8px 30px rgba(168, 85, 247, 0.08);
+    --shadow-button: 0px 6px 25px rgba(168, 85, 247, 0.25);
+    --shadow-hero: 0px 20px 60px rgba(168, 85, 247, 0.2);
     
     /* Border radius */
     --radius: 0.75rem;
@@ -84,26 +84,26 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 258 30% 8%;
+    --foreground: 270 80% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 258 25% 12%;
+    --card-foreground: 270 70% 88%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 258 25% 12%;
+    --popover-foreground: 270 70% 88%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 258 70% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 270 30% 20%;
+    --secondary-foreground: 270 80% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 258 20% 18%;
+    --muted-foreground: 270 30% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 285 60% 25%;
+    --accent-foreground: 270 80% 88%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;

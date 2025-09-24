@@ -158,7 +158,7 @@ const FixedDepositCalculator: React.FC = () => {
       }
     },
     ja: {
-      bankName: 'キャッシュキャッシュ',
+      bankName: 'キャッシュキャッシュド',
       title: '定期預金計算機',
       subtitle: 'ゼニスの競争力のある金利で貯蓄を最大化',
       amount: '預金額',
