@@ -34,8 +34,8 @@ export default {
 					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
-					green: 'hsl(var(--secondary-green))',
-					mint: 'hsl(var(--secondary-mint))',
+					slate: 'hsl(var(--secondary-slate))',
+					gold: 'hsl(var(--secondary-gold))',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
 				destructive: {
