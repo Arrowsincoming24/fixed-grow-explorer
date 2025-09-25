@@ -19,8 +19,8 @@
     --secondary-foreground: 258 70% 25%;
     
     /* Light theme backgrounds */
-    --background: 270 30% 98%; /* Very light purple white */
-    --foreground: 258 70% 15%; /* Dark purple text */
+    --background: 0 0% 0%; /* Black background */
+    --foreground: 315 85% 70%; /* Pink text */
     
     /* Card and surface colors */
     --card: 270 40% 97%; /* Subtle purple tint cards */
