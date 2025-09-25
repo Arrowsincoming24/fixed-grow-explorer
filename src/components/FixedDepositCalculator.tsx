@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calculator, TrendingUp, Globe, Calendar, Banknote, Shield, Award, Star, Zap } from 'lucide-react';
+import { Calculator, TrendingUp, Globe, Calendar, Banknote, Shield, Award, Star, Zap, Crown } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -33,44 +33,64 @@ const FixedDepositCalculator: React.FC = () => {
   const [period, setPeriod] = useState<number>(12);
   const [age, setAge] = useState<string>('35');
   const [interestType, setInterestType] = useState<'simple' | 'compound'>('simple');
-  const [selectedProduct, setSelectedProduct] = useState<string>('zenith-premium');
+  const [selectedProduct, setSelectedProduct] = useState<string>('cashcached-platinum-fd');
   const [result, setResult] = useState<CalculationResult | null>(null);
 
   const productTypes: ProductType[] = [
     {
-      id: 'zenith-starter',
-      name: { en: 'Zenith Starter Deposit', ja: 'ゼニス・スターター預金' },
-      baseRate: 3.2,
+      id: 'senior-citizen-fd',
+      name: { en: '5-YEAR SENIOR CITIZEN FD', ja: '5年シニア市民定期預金' },
+      baseRate: 6.4,
       isFloating: false,
-      periods: [3, 6, 12, 18],
+      periods: [60],
+      icon: Shield,
+      tier: 'premium',
+      minAmount: 1000
+    },
+    {
+      id: 'retail-fd',
+      name: { en: 'FIXED DEPOSIT (RETAIL)', ja: '定期預金（個人向け）' },
+      baseRate: 7.2,
+      isFloating: false,
+      periods: [1, 3, 6, 12, 24, 36, 60, 120],
       icon: Banknote,
       tier: 'basic',
       minAmount: 1000
     },
     {
-      id: 'zenith-classic',
-      name: { en: 'Zenith Classic Fixed', ja: 'ゼニス・クラシック定期' },
-      baseRate: 3.8,
+      id: 'wellness-fd',
+      name: { en: 'WELLNESS FIXED DEPOSIT', ja: 'ウェルネス定期預金' },
+      baseRate: 6.5,
       isFloating: false,
-      periods: [6, 12, 18, 24, 36],
-      icon: Shield,
-      tier: 'basic',
-      minAmount: 5000
-    },
-    {
-      id: 'zenith-premium',
-      name: { en: 'Zenith Premium Growth', ja: 'ゼニス・プレミアム成長' },
-      baseRate: 4.5,
-      isFloating: false,
-      periods: [6, 12, 24, 36, 48],
+      periods: [12],
       icon: Award,
       tier: 'premium',
-      minAmount: 15000
+      minAmount: 50000
     },
     {
-      id: 'zenith-platinum',
-      name: { en: 'Zenith Platinum Elite', ja: 'ゼニス・プラチナエリート' },
-      baseRate: 5.2,
+      id: 'green-rupee-fd',
+      name: { en: 'GREEN RUPEE TERM DEPOSIT', ja: 'グリーンルピー定期預金' },
+      baseRate: 6.4,
+      isFloating: false,
+      periods: [36, 48, 60],
+      icon: TrendingUp,
+      tier: 'premium',
+      minAmount: 1000
+    },
+    {
+      id: 'fcnr-deposits',
+      name: { en: 'FCNR DEPOSITS', ja: 'FCNR預金' },
+      baseRate: 3.0,
+      isFloating: true,
+      periods: [12, 24, 36, 48, 60],
+      icon: Globe,
+      tier: 'premium',
+      minAmount: 1000
+    },
+    {
+      id: 'cashcached-platinum-fd',
+      name: { en: 'CASHCACHED PLATINUM FD', ja: 'キャッシュキャッシュド・プラチナ定期' },
+      baseRate: 7.75,
       isFloating: false,
       periods: [12, 24, 36, 48, 60],
       icon: Star,
@@ -78,42 +98,42 @@ const FixedDepositCalculator: React.FC = () => {
       minAmount: 50000
     },
     {
-      id: 'zenith-flexible',
-      name: { en: 'Zenith Flexible Rate', ja: 'ゼニス・フレキシブル金利' },
-      baseRate: 4.2,
-      isFloating: true,
-      periods: [6, 12, 24, 36],
-      icon: TrendingUp,
+      id: 'cashcached-womens-fd',
+      name: { en: "CASHCACHED WOMEN'S FD", ja: 'キャッシュキャッシュド・女性向け定期' },
+      baseRate: 7.85,
+      isFloating: false,
+      periods: [12, 24, 36, 48, 60, 84],
+      icon: Award,
       tier: 'premium',
       minAmount: 10000
     },
     {
-      id: 'zenith-dynamic',
-      name: { en: 'Zenith Dynamic Yield', ja: 'ゼニス・ダイナミック利回り' },
-      baseRate: 4.8,
-      isFloating: true,
-      periods: [12, 24, 36, 48],
-      icon: Zap,
-      tier: 'platinum',
+      id: 'cashcached-tax-saver-fd',
+      name: { en: 'CASHCACHED TAX SAVER FD', ja: 'キャッシュキャッシュド・税制優遇定期' },
+      baseRate: 7.20,
+      isFloating: false,
+      periods: [60],
+      icon: Shield,
+      tier: 'premium',
+      minAmount: 10000
+    },
+    {
+      id: 'cashcached-senior-plus-fd',
+      name: { en: 'CASHCACHED SENIOR PLUS FD', ja: 'キャッシュキャッシュド・シニアプラス定期' },
+      baseRate: 8.10,
+      isFloating: false,
+      periods: [12, 24, 36, 48, 60, 120],
+      icon: Crown,
+      tier: 'elite',
       minAmount: 25000
     },
     {
-      id: 'zenith-elite',
-      name: { en: 'Zenith Elite Privilege', ja: 'ゼニス・エリート特権' },
-      baseRate: 5.8,
+      id: 'cashcached-green-growth-fd',
+      name: { en: 'CASHCACHED GREEN GROWTH FD', ja: 'キャッシュキャッシュド・グリーン成長定期' },
+      baseRate: 7.50,
       isFloating: false,
-      periods: [24, 36, 48, 60, 84],
-      icon: Award,
-      tier: 'elite',
-      minAmount: 100000
-    },
-    {
-      id: 'zenith-senior',
-      name: { en: 'Zenith Senior Advantage', ja: 'ゼニス・シニア特典' },
-      baseRate: 4.0,
-      isFloating: false,
-      periods: [6, 12, 18, 24, 36],
-      icon: Shield,
+      periods: [36, 48, 60, 72],
+      icon: Zap,
       tier: 'premium',
       minAmount: 5000
     }
@@ -129,7 +149,7 @@ const FixedDepositCalculator: React.FC = () => {
     en: {
       bankName: 'Cashcached',
       title: 'Fixed Deposit Calculator',
-      subtitle: 'Maximize your savings with Zenith\'s competitive rates',
+      subtitle: 'Maximize your savings with Cashcached competitive rates',
       amount: 'Deposit Amount',
       period: 'Investment Period',
       months: 'months',
@@ -160,7 +180,7 @@ const FixedDepositCalculator: React.FC = () => {
     ja: {
       bankName: 'キャッシュキャッシュド',
       title: '定期預金計算機',
-      subtitle: 'ゼニスの競争力のある金利で貯蓄を最大化',
+      subtitle: 'キャッシュキャッシュドの競争力のある金利で貯蓄を最大化',
       amount: '預金額',
       period: '投資期間',
       months: 'ヶ月',
