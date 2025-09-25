@@ -8,46 +8,46 @@
 
 @layer base {
   :root {
-    /* Core brand colors - Cashcached purple-pink palette */
-    --primary: 258 75% 65%; /* Purple #A855F7 */
-    --primary-end: 315 85% 70%; /* Pink #F061D8 */
-    --primary-foreground: 0 0% 100%;
+    /* Core brand colors - Black and pink palette */
+    --primary: 315 85% 70%; /* Pink #F061D8 */
+    --primary-end: 330 100% 80%; /* Light pink */
+    --primary-foreground: 0 0% 0%; /* Black text on pink */
     
     /* Secondary colors */
-    --secondary-cream: 270 60% 95%; /* Light purple cream */
-    --secondary-bronze: 270 45% 75%; /* Medium purple */
-    --secondary-foreground: 258 70% 25%;
+    --secondary-cream: 0 0% 8%; /* Dark gray */
+    --secondary-bronze: 0 0% 15%; /* Medium dark gray */
+    --secondary-foreground: 315 85% 70%; /* Pink text */
     
     /* Light theme backgrounds */
     --background: 0 0% 0%; /* Black background */
     --foreground: 315 85% 70%; /* Pink text */
     
     /* Card and surface colors */
-    --card: 270 40% 97%; /* Subtle purple tint cards */
-    --card-foreground: 258 60% 20%;
-    --card-secondary: 270 50% 95%; /* Light purple tint */
+    --card: 0 0% 5%; /* Dark gray cards */
+    --card-foreground: 315 85% 70%; /* Pink text on cards */
+    --card-secondary: 0 0% 10%; /* Slightly lighter dark */
     
     /* Muted colors */
-    --muted: 270 35% 92%; /* Light purple-gray */
-    --muted-foreground: 258 40% 50%;
+    --muted: 0 0% 12%; /* Dark muted */
+    --muted-foreground: 315 50% 60%; /* Muted pink */
     
     /* Interactive elements */
-    --accent: 285 70% 85%; /* Light purple accent */
-    --accent-foreground: 258 70% 25%;
+    --accent: 315 85% 70%; /* Pink accent */
+    --accent-foreground: 0 0% 0%; /* Black text on pink */
     
     /* Form elements */
-    --input: 0 0% 100%;
-    --input-foreground: 30 20% 20%;
-    --border: 45 20% 88%;
-    --ring: 30 20% 20%;
+    --input: 0 0% 8%; /* Dark input background */
+    --input-foreground: 315 85% 70%; /* Pink input text */
+    --border: 0 0% 20%; /* Dark border */
+    --ring: 315 85% 70%; /* Pink focus ring */
     
     /* Status colors */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --success: 285 60% 55%; /* Purple-tinted success */
-    --success-foreground: 0 0% 100%;
-    --warning: 315 80% 65%; /* Pink-tinted warning */
-    --warning-foreground: 0 0% 100%;
+    --success: 315 60% 55%; /* Pink-tinted success */
+    --success-foreground: 0 0% 0%;
+    --warning: 330 80% 65%; /* Light pink warning */
+    --warning-foreground: 0 0% 0%;
     
     /* Enhanced gradients */
     --gradient-primary: linear-gradient(135deg, hsl(258 75% 65%), hsl(315 85% 70%));
