@@ -548,15 +548,26 @@ const FixedDepositCalculator: React.FC = () => {
                 </div>
               )}
 
-              <Button 
-                variant="premium" 
-                size="lg" 
-                className="w-full mt-6 text-lg font-bold"
-                onClick={calculateReturns}
-              >
-                <Calculator className="w-5 h-5 mr-2" />
-                {t.calculate}
-              </Button>
+              <div className="space-y-3">
+                <Button 
+                  variant="premium" 
+                  size="lg" 
+                  className="w-full text-lg font-bold"
+                  onClick={calculateReturns}
+                >
+                  <Calculator className="w-5 h-5 mr-2" />
+                  {t.calculate}
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="w-full text-lg font-bold border-primary text-primary hover:bg-primary hover:text-white"
+                  onClick={() => window.open('https://lovable.dev/projects/be9406ba-6840-4c94-9cb9-4fe6f45f4a74', '_blank')}
+                >
+                  View All Products
+                </Button>
+              </div>
             </Card>
           </div>
         </div>
